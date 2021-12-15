@@ -1,7 +1,7 @@
-import React from "react";
+import React, { useState } from "react";
 import Button from "components/Button";
 import InterviewerList from "components/InterviewerList"
-import { useState } from "react";
+
   const Form = (props) => {
     const [student, setStudent] = useState(props.student || "");
     const [interviewer, setInterviewer] = useState(props.interviewer || null);
@@ -27,10 +27,7 @@ import { useState } from "react";
               name="name"
               type="text"
               placeholder="Enter Student Name"
-              /*
-                This must be a controlled component
-                your code goes here
-              */
+      
               value={student}
               onChange={(evt) => setStudent(evt.target.value)}
             />

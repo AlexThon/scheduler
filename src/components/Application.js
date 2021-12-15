@@ -1,13 +1,13 @@
 import React, {useState, useEffect} from "react";
 import axios from "axios";
-import DayList from "./DayList";
-import Appointment from './Appointment';
+import DayList from "components/DayList";
+import Appointment from 'components/Appointment';
 import { getAppointmentsForDay, getInterview } from "../helpers/selectors";
-import "./Application.scss";
+import "components/Application.scss";
 
 
 
-export default function Application(props) {
+export default function Application() {
 
   const [state, setState] = useState({
     day: 'Monday',
