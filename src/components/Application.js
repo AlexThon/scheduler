@@ -28,7 +28,7 @@ export default function Application() {
     
       const [first, second, third] = all;
       setState(prev => ({...prev, days: first.data, appointments: second.data, interview: third.data }));
-      console.log("interview", second.data)
+      console.log("days", first.data)
      
     });
 

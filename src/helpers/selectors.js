@@ -2,7 +2,7 @@ import React from "react";
 
 export function getAppointmentsForDay (state, day){
   
-  const filteredDays = state.days.filter(dayObj => dayObj.name === day);
+  const filteredDays = state.days.filter(daySelected => daySelected.name === day);
   if(filteredDays.length === 0 || !day) {
     return [];
   }
@@ -21,5 +21,18 @@ export const getInterview = (state, interview) => {
   const resultObj = {student: interview.student}
   resultObj.interviewer = state.interviewers[interview.interviewer]
   return resultObj;
+}
+
+
+export const getInterviewrsForDay = (state, day) => {
+  const filteredDays = state.days.filter(dayObj => dayObj.name === day);
+  if(filteredDays.length === 0 || !day) {
+    return [];
+  }
+
+  for (let day of filteredDays) {
+    return  day.interviewers.map(id => state.interviewers[id]);
+  } 
+    
 }
 

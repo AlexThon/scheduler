@@ -27,10 +27,31 @@ const ERROR_DELETE = 'ERROR_DELETE';
 
 
 const Appointment = (props) => {
+  // const { id, time, interview, interviewers, bookInterview, cancelInterview } = props;
   
   const { mode, transition, back } = useVisualMode(
     props.interview ? SHOW : EMPTY
   );
+
+  function save(name, interviewer) {
+    const interview = {
+      student: name,
+      interviewer
+    };
+
+    transition(SAVING);
+
+    props
+     .bookInterview(props.id, interview)
+      .then(() => {
+        transition(SHOW);
+      })
+      .catch(error => {
+        transition(ERROR_SAVE, true);
+      });
+  }
+  
+
   return (
     <article className="appointment">
       <Header time={props.time} />
@@ -43,7 +64,10 @@ const Appointment = (props) => {
         interviewer={props.interview.interviewer}
         
       />)}
- 
+      {mode === CREATE && (
+        <Form interviewers={[]} onSave={save} onCancel={back} />
+        )}
+      
       </article>
   );
 }
