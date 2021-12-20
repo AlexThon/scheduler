@@ -5,6 +5,12 @@ an appointment with one of the given interviewers in the application. The app is
 ## Appointment Form
 !["screen showing the appointment list"](https://github.com/AlexThon/scheduler/blob/master/doc/form-interviewList.png)
 
+## Register new student
+!["show the screen for adding a new student"](https://github.com/AlexThon/scheduler/blob/master/doc/Add-interview.png)
+
+## Confirm to delete an interview
+!["This screens appear to confirm the action"](https://github.com/AlexThon/scheduler/blob/master/doc/confirm.png)
+
 ## Setup
 
 Install dependencies with `npm install`.
