@@ -27,7 +27,7 @@ const DayListItem = ({name, spots, selected, setDay}) => {
   }
 
   return (
-    <li onClick={setDay} className={dayListStyle}>
+    <li onClick={setDay} className={dayListStyle} data-testid="day">
       <h2  className='text-regular'>{name}</h2>
       <h3  className='text-align'>{formatSpots(spots)}</h3>
 

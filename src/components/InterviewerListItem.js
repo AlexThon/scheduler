@@ -16,7 +16,7 @@ const InterviewerListItem = ({name, avatar, selected, onChange}) => {
       <img 
         className = 'interviewers__item-imgae'
         src={avatar}
-        alt="Sylvia Palmer"
+        alt={name}
       />
       { selected && name}
     </li>    

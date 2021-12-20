@@ -30,10 +30,10 @@ export const getInterviewersForDay = (state, day) => {
 	let interviewers = [];
 
 	for (let day of filteredDays) {
-		day.interviewers.forEach((dayInterviwer) => {
-			const interviwer = state.interviewers[dayInterviwer];
-			if (interviwer) {
-				interviewers.push(interviwer);
+		day.interviewers.forEach((interviewerId) => {
+			const interviewer = state.interviewers[interviewerId];
+			if (interviewer) {
+				interviewers.push(interviewer);
 			}
 		});
 	}
